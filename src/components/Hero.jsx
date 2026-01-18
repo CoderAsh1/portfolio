@@ -9,7 +9,7 @@ const Hero = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setTitleIndex((prev) => (prev + 1) % titles.length);
-        }, 3000); // Change every 3 seconds
+        }, 2000); // Change every 3 seconds
 
         return () => clearInterval(interval);
     }, []);

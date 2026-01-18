@@ -4,25 +4,25 @@ import { Brain } from 'lucide-react';
 // Using Simple Icons CDN for authentic brand logos
 // Format: https://cdn.simpleicons.org/[ICON_SLUG]/[COLOR_HEX]
 const orbitingSkills = [
-    // Inner Orbit - Core Backend
-    { name: 'Java', logo: 'https://cdn.simpleicons.org/openjdk/f89820', radius: 130, duration: 25 },
-    { name: 'Spring', logo: 'https://cdn.simpleicons.org/spring/6db33f', radius: 130, duration: 25, delay: 6 },
-    { name: 'Kafka', logo: 'https://cdn.simpleicons.org/apachekafka/231f20', radius: 130, duration: 25, delay: 12 },
-    { name: 'Redis', logo: 'https://cdn.simpleicons.org/redis/d82c20', radius: 130, duration: 25, delay: 18 },
+    // Inner Orbit - Core Backend (Consistent SkillIcons)
+    { name: 'Java', logo: 'https://skillicons.dev/icons?i=java', radius: 130, duration: 25 },
+    { name: 'Spring', logo: 'https://skillicons.dev/icons?i=spring', radius: 130, duration: 25, delay: 6 },
+    { name: 'Kafka', logo: 'https://skillicons.dev/icons?i=kafka', radius: 130, duration: 25, delay: 12 },
+    { name: 'Redis', logo: 'https://skillicons.dev/icons?i=redis', radius: 130, duration: 25, delay: 18 },
 
     // Middle Orbit - Frontend & Ecosystem
-    { name: 'React', logo: 'https://cdn.simpleicons.org/react/61dafb', radius: 210, duration: 35, delay: 0 },
-    { name: 'Next.js', logo: 'https://cdn.simpleicons.org/nextdotjs/000000', radius: 210, duration: 35, delay: 7 },
-    { name: 'Node.js', logo: 'https://cdn.simpleicons.org/nodedotjs/68a063', radius: 210, duration: 35, delay: 14 },
-    { name: 'TypeScript', logo: 'https://cdn.simpleicons.org/typescript/3178c6', radius: 210, duration: 35, delay: 21 },
-    { name: 'JavaScript', logo: 'https://cdn.simpleicons.org/javascript/f7df1e', radius: 210, duration: 35, delay: 28 },
+    { name: 'React', logo: 'https://skillicons.dev/icons?i=react', radius: 210, duration: 35, delay: 0 },
+    { name: 'Next.js', logo: 'https://skillicons.dev/icons?i=nextjs', radius: 210, duration: 35, delay: 7 },
+    { name: 'Node.js', logo: 'https://skillicons.dev/icons?i=nodejs', radius: 210, duration: 35, delay: 14 },
+    { name: 'TypeScript', logo: 'https://skillicons.dev/icons?i=ts', radius: 210, duration: 35, delay: 21 },
+    { name: 'JavaScript', logo: 'https://skillicons.dev/icons?i=js', radius: 210, duration: 35, delay: 28 },
 
     // Outer Orbit - Infrastructure & Data
-    { name: 'AWS', logo: 'https://cdn.simpleicons.org/amazonwebservices/ff9900', radius: 290, duration: 45, delay: 0 },
-    { name: 'Docker', logo: 'https://cdn.simpleicons.org/docker/2496ed', radius: 290, duration: 45, delay: 9 },
-    { name: 'Postgres', logo: 'https://cdn.simpleicons.org/postgresql/336791', radius: 290, duration: 45, delay: 18 },
-    { name: 'DynamoDB', logo: 'https://cdn.simpleicons.org/amazondynamodb/4053D6', radius: 290, duration: 45, delay: 27 },
-    { name: 'Elastic', logo: 'https://cdn.simpleicons.org/elasticsearch/005571', radius: 290, duration: 45, delay: 36 },
+    { name: 'AWS', logo: 'https://skillicons.dev/icons?i=aws', radius: 290, duration: 45, delay: 0 },
+    { name: 'Docker', logo: 'https://skillicons.dev/icons?i=docker', radius: 290, duration: 45, delay: 9 },
+    { name: 'Postgres', logo: 'https://skillicons.dev/icons?i=postgres', radius: 290, duration: 45, delay: 18 },
+    { name: 'DynamoDB', logo: 'https://skillicons.dev/icons?i=dynamodb', radius: 290, duration: 45, delay: 27 },
+    { name: 'Elastic', logo: 'https://skillicons.dev/icons?i=elasticsearch', radius: 290, duration: 45, delay: 36 },
 ];
 
 const OrbitItem = ({ skill }) => {
