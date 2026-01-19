@@ -15,23 +15,44 @@ const Navbar = () => {
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
+    // Heartbeat Sound Effect using Web Audio API
+    // Only kept for click interaction as requested (scroll sound removed)
+    const playHeartbeat = () => {
+        try {
+            const AudioContext = window.AudioContext || window.webkitAudioContext;
+            if (!AudioContext) return;
 
-            // Show navbar when scrolling up, hide when scrolling down
-            if (currentScrollY < lastScrollY || currentScrollY < 100) {
-                setIsVisible(true);
-            } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                setIsVisible(false);
-            }
+            const ctx = new AudioContext();
 
-            setLastScrollY(currentScrollY);
-        };
+            // Function to create a heartbeat pulse
+            const createPulse = (time, duration, frequency, volume) => {
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
 
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [lastScrollY]);
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(frequency, time);
+                osc.frequency.exponentialRampToValueAtTime(frequency / 2, time + duration);
+
+                gain.gain.setValueAtTime(volume, time);
+                gain.gain.exponentialRampToValueAtTime(0.001, time + duration);
+
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+
+                osc.start(time);
+                osc.stop(time + duration);
+            };
+
+            // Play "lub-dub" sound (two pulses)
+            const now = ctx.currentTime;
+            // "Lub" - deeper, starting at 100Hz dropping to 50Hz quickly
+            createPulse(now, 0.15, 100, 0.5);
+            // "Dub" - slightly higher pitch, starting at 120Hz
+            createPulse(now + 0.2, 0.15, 120, 0.3);
+        } catch (e) {
+            console.error("Audio playback failed", e);
+        }
+    };
 
     return (
         <motion.div
@@ -49,6 +70,7 @@ const Navbar = () => {
                         <li key={item.name}>
                             <a
                                 href={item.href}
+                                onClick={playHeartbeat}
                                 className="flex items-center gap-2 px-4 py-2 rounded-full text-slate-600 hover:text-emerald-600 hover:bg-white/50 transition-all duration-300 group"
                             >
                                 <item.icon size={18} className="group-hover:scale-110 transition-transform" />
