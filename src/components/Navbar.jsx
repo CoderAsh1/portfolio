@@ -54,6 +54,24 @@ const Navbar = () => {
         }
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+
+            // Show navbar when scrolling up, hide when scrolling down
+            if (currentScrollY < lastScrollY || currentScrollY < 100) {
+                setIsVisible(true);
+            } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                setIsVisible(false);
+            }
+
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [lastScrollY]);
+
     return (
         <motion.div
             initial={{ y: -100, opacity: 0 }}
