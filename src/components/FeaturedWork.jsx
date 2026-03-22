@@ -15,7 +15,7 @@ const projects = [
             'Integrated ZK Bio CV security for automatic vehicle recognition and gate control.',
             'Leveraged AWS IoT Core for real-time FMB 920 device data ingestion.',
         ],
-        tech: ['React', 'PostgreSQL', 'AWS IoT', 'Google Maps API'],
+        tech: ['React', 'PostgreSQL', 'AWS IoT', 'Google Maps API', 'Spring Boot'],
         gradient: 'from-blue-500 to-indigo-600',
         bgGradient: 'from-blue-50 to-indigo-50',
     },
@@ -28,11 +28,11 @@ const projects = [
         location: 'USA',
         achievements: [
             'Designed and implemented a Driver Route Planning Software that reduced routing time by up to 80%.',
-            'Integrated HERE Maps API for real-time visualization of shipment and driver locations, enhancing transparency.',
+            'Improved API response times by delegating async tasks to AWS SQS message queues, enabling non-blocking request handling at scale',
             'Implemented advanced route optimization with real-time deviation alerts, improving driver accountability.',
             'Utilized Elastic Search to build a highly scalable and responsive search system.',
         ],
-        tech: ['Spring Boot', 'AWS', 'HERE Maps API', 'Elastic Search', 'Kafka'],
+        tech: ['AWS', 'HERE Maps API', 'Elastic Search', 'Kafka'],
         gradient: 'from-emerald-500 to-teal-600',
         bgGradient: 'from-emerald-50 to-teal-50',
     }

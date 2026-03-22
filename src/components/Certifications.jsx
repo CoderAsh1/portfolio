@@ -3,25 +3,16 @@ import { Award, ExternalLink } from 'lucide-react';
 
 const certifications = [
     {
-        title: 'AWS Certified Developer - Associate',
-        issuer: 'Amazon Web Services',
-        date: '2024',
-        logo: 'aws', // Placeholder
-        link: '#'
+        title: 'M.Sc Computer Science',
+        issuer: 'Woolf University',
+        date: '2026',
+        link: 'https://drive.google.com/file/d/1qH83ioB-XdVslOY3Soe_6Da19N5-pzK-/view?usp=drive_link'
     },
     {
-        title: 'Meta Frontend Developer',
-        issuer: 'Meta',
-        date: '2023',
-        logo: 'meta', // Placeholder
-        link: '#'
-    },
-    {
-        title: 'Full Stack Java Developer',
-        issuer: 'Udemy',
+        title: 'Frontend Developer',
+        issuer: 'Relevel By Unacademy',
         date: '2022',
-        logo: 'java', // Placeholder
-        link: '#'
+        link: 'https://drive.google.com/file/d/1iYKPMmuV7JOH5aS0J6_hEVOHsM0P3OES/view?usp=sharing'
     }
 ];
 
@@ -64,20 +55,13 @@ const Certifications = () => {
                             </div>
 
                             <div className="hidden sm:block opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-4 group-hover:translate-x-0">
-                                <ExternalLink className="text-slate-400 hover:text-emerald-600" size={20} />
+                                <a href={cert.link} target='_blank'>
+                                    <ExternalLink className="text-slate-400 hover:text-emerald-600" size={20} />
+                                </a>
                             </div>
                         </motion.div>
                     ))}
                 </div>
-
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: 0.5 }}
-                    className="text-center mt-8"
-                >
-                    <p className="text-slate-500 italic text-sm">More details available at <a href="https://ashutoshsasmal.netlify.app/" target="_blank" className="text-emerald-600 hover:underline">ashutoshsasmal.netlify.app</a></p>
-                </motion.div>
             </div>
         </section>
     );
